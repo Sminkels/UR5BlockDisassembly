@@ -36,11 +36,17 @@ To get started, first you need the following materials:
 9. In the .yaml file, add the following things under "Path":
     
    paths:
+   
      cam:
+   
        source: rpiCamera
+   
        rpiCameraHFlip: True (depends on orientation)
+   
        rpiCameraVFlip: True
+   
        rpiCameraEV: -1 (depends on light, change accordingly
+   
 11. Execute "mediamtx.exe"
 12. Open the RPi terminal and look for "hostname -I". This will be the IP address of the RTSP stream
 13. To test the stream, go to http://IP-address:8889/cam
