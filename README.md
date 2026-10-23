@@ -1,5 +1,7 @@
 # Computer Vision: camera + brick detection
 
+<img width="4960" height="3507" alt="BlockLogo" src="https://github.com/user-attachments/assets/620234be-0368-4a0d-b8f9-5eba34b596fa" />
+
 This github is a part of PicoBricks, an AR assembly tool for the UR5. In order to properly disassemble the strucutre made through AR, or by hand, Computer Vision (CV) can step in. This github therefore contains files to set up CV for disassembly.
 
 Be aware that this CV approach utilises RTSP streams. The code is purely based on retrieving RTSP streams, and is not suitable for other streams or regular cameras, unless the code is changed. 
