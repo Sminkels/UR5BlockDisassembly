@@ -35,17 +35,12 @@ To get started, first you need the following materials:
 8. Extract the file, and make sure you have "mediamtx.exe" and "mediamtx.yaml" in the folder "mediamtx"
 9. In the .yaml file, add the following things under "Path":
     
-   paths:
-   
-     cam:
-   
-       source: rpiCamera
-   
-       rpiCameraHFlip: True (depends on orientation)
-   
-       rpiCameraVFlip: True
-   
-       rpiCameraEV: -1 (depends on light, change accordingly
+       paths:
+         cam:
+            source: rpiCamera
+            rpiCameraHFlip: True (depends on orientation)
+            rpiCameraVFlip: True
+            rpiCameraEV: -1 (depends on light, change accordingly
    
 11. Execute "mediamtx.exe"
 12. Open the RPi terminal and look for "hostname -I". This will be the IP address of the RTSP stream
@@ -88,6 +83,7 @@ In that case, there are a couple of quick fixes:
 2. Measure the true distance between the ArUco tags. You should measure this from centre to centre. This distance should be 400 mm. If not, change the ArUco positions in the GH file under the "Do NOT change, unless necessary". If for example ArUco's 0 and 3 are more than 400 mm apart, change the X position of ArUco 3 (fourth X coordinate) until it corresponds. 
 
 _Is it possible to use a phone?_
+
 Whilst not advisory, it is possible to use a phone. If you download an RTSP stream app, you should be able to use a phone for an RTSP stream.
 
 ## Future improvements
