@@ -53,7 +53,7 @@ To get started, first you need the following materials:
 2. Typ the stream address in the "RTSP Stream address" box
 3. Check if the camera toolkit is able to receive the stream by clicking "Live view"
 4. Print out 10 different AruCo tags (ideally 25 mm) with unique ID's
-5. Using the layout `UR5TableLayout.png` stick AruCo's 0-3 on the table and stick the remaining AruCo's on top of the blocks
+5. Using the layout `robot_toolkit/UR5TableLayout.png` stick AruCo's 0-3 on the table and stick the remaining AruCo's on top of the blocks
 6. Check if the markers are visible by opening "Marker check". If markers are not showing up, try chaning the EV of the camera in the .yaml file
 7. Open "Height check", select "Find the heighest marker" and fill in the table plane AruCo tags (0,1,2,3) and the AruCo size (25 mm)
 8. The distance between ArUco's 0-1 and 0-3 should roughly be 400 mm. If not, change the FOV until it is more precise. The FOV accounts for the angle of the camera
