@@ -61,16 +61,28 @@ Be aware that the heights will not be entirely accurate. This is because the RPi
 
 ## How to setup the Grasshopper
 
-1. Open `
+1. Open `DisassemblyModel.gh` and `DisassemblyModel.3dm`
+2. Check in the .3dm file if the end positions of the blocks are corresponding with real life
+3. Set the end positions of the blocks in the GH file under "End positions - blocks"
+4. Choose the path to the .json file (from Camera Toolkit) by right clicking on "Path"
+5. Select the correct mode. If a wall has already been built with no prior recorded history, toggle "layer_mode". This will allow you to scan a layer, disassemble it, and rescan the next layer until the full wall has been removed. If a wall is yet to be constructed, leave "layer_mode" off
+6. Set the maximum amount of blocks the wall or a layer contains under "max_blocks"
+7. Set "run" to true
+8. Preview the scanned blocks by going to "Robot Settings" and clicking on "Playback". If all goes well, you are ready to run the robot
+9. Press "Upload" once and let the robot run
+10. To reset the cycle, first turn off "run" and click on "reset"
 
-## Known issues
+## FAQ
 
-Fill in or delete when fixed.
+_What if the position of the blocks is slightly off?_
+In that case, there are a couple of quick fixes:
+1. Change the FOV in `Camera_Toolkit.py`. Test to see if this has made a difference
+2. Measure the true distance between the ArUco tags. You should measure this from centre to centre. This distance should be 400 mm. If not, change the ArUco positions in the GH file under the "Do NOT change, unless necessary". If for example ArUco's 0 and 3 are more than 400 mm apart, change the X position of ArUco 3 (fourth X coordinate) until it corresponds. 
 
-- Pick plane can be flipped the wrong way
-- Run command does not always trigger
-- Script does not always advance to the next block
+_Is it possible to use a phone?_
+Whilst not advisory, it is possible to use a phone. If you download an RTSP stream app, you should be able to use a phone for an RTSP stream.
 
-## Not in this repo on purpose
-
-Recordings, stopmotion videos, captured images, virtual environments and local settings. See `.gitignore` in this folder.
+## Future improvements
+Whilst the program works well for small walls with identical blocks, it would be even better if further improvements were to be made. In the future, this CV tool could be extended to:
+1. Include a closed loop system. Right now, the system is only able to record a wall and fix its positions, which means that if the user were to make small changes after the recording, that it cannot process these updates.
+2. Recognising differently shaped objects. In the current workflow, only identical bricks can be detected. Detecting different objects and disassembling them would require a different gripper system, as well as machine learning. 
