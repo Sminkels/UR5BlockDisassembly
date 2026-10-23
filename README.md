@@ -34,16 +34,17 @@ To get started, first you need the following materials:
 7. Install Mediamtx via Chromium. Make sure to download the arm64 version (https://github.com/bluenviron/mediamtx/releases)
 8. Extract the file, and make sure you have "mediamtx.exe" and "mediamtx.yaml" in the folder "mediamtx"
 9. In the .yaml file, add the following things under "Path":
+    
    paths:
      cam:
        source: rpiCamera
        rpiCameraHFlip: True (depends on orientation)
        rpiCameraVFlip: True
        rpiCameraEV: -1 (depends on light, change accordingly
-10. Execute "mediamtx.exe"
-11. Open the RPi terminal and look for "hostname -I". This will be the IP address of the RTSP stream
-12. To test the stream, go to http://IP-address:8889/cam
-13. Now place your camera on the tripod, and you are all set
+11. Execute "mediamtx.exe"
+12. Open the RPi terminal and look for "hostname -I". This will be the IP address of the RTSP stream
+13. To test the stream, go to http://IP-address:8889/cam
+14. Now place your camera on the tripod, and you are all set
 
 ## How to setup the Camera for the UR5
 
@@ -75,6 +76,7 @@ Be aware that the heights will not be entirely accurate. This is because the RPi
 ## FAQ
 
 _What if the position of the blocks is slightly off?_
+
 In that case, there are a couple of quick fixes:
 1. Change the FOV in `Camera_Toolkit.py`. Test to see if this has made a difference
 2. Measure the true distance between the ArUco tags. You should measure this from centre to centre. This distance should be 400 mm. If not, change the ArUco positions in the GH file under the "Do NOT change, unless necessary". If for example ArUco's 0 and 3 are more than 400 mm apart, change the X position of ArUco 3 (fourth X coordinate) until it corresponds. 
