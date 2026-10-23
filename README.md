@@ -42,7 +42,7 @@ To get started, first you need the following materials:
        rpiCameraEV: -1 (depends on light, change accordingly
 10. Execute "mediamtx.exe"
 11. Open the RPi terminal and look for "hostname -I". This will be the IP address of the RTSP stream
-12. To test the stream, go to http://<IP-address>:8889/cam
+12. To test the stream, go to http://IP-address:8889/cam
 13. Now place your camera on the tripod, and you are all set
 
 ## How to setup the Camera for the UR5
