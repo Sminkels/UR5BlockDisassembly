@@ -299,6 +299,8 @@ MANUAL = [
           "marker's height above that plane. This works for a tilted camera too. Use IDs that are not "
           "used on bricks. Leave the field empty to use the old method (distance along the camera axis, "
           "only valid for a camera looking straight down)."),
+    ("b", "Ref. size (mm): only needed when the table reference markers are printed at a different size "
+          "than the other markers. Leave it empty to use the normal marker size."),
     ("b", "Reference markers stay in the calculation for 3 seconds after they leave the view, so a "
           "hand or the robot arm covering one for a moment does not break the measurement. The status "
           "text shows the camera tilt relative to the table and, with 4 or more references, how well "
@@ -1040,6 +1042,9 @@ class HeightTest(ModeFrame):
         rl.pack(side="left", expand=True, fill="x", padx=(8, 4))
         rr = tk.Frame(refrow, bg=C["sandstone"])
         rr.pack(side="left", padx=(4, 8))
+        make_label(rr, "Ref. size (mm)", 9, True).pack(anchor="w")
+        self.ref_size_var = tk.StringVar(value=str(cfg.get("height_ref_size_mm", "")))
+        make_entry(rr, self.ref_size_var, width=8).pack()
         make_label(rl, "Table reference IDs", 9, True).pack(anchor="w")
         self.refs_var = tk.StringVar(value=str(cfg.get("height_ref_ids", "")))
         make_entry(rl, self.refs_var).pack(fill="x")
