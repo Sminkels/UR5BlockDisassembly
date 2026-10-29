@@ -1031,9 +1031,9 @@ class HeightTest(ModeFrame):
         make_entry(right, self.tgt_var).pack(fill="x")
         # highest mode inputs
         self.high_box = tk.Frame(self.mode_box, bg=C["sandstone"])
-        make_label(self.high_box, "Candidate IDs (empty = all)", 9, True).pack(anchor="w")
+        make_label(self.high_box, "Block IDs (empty = all IDs)", 9, True).pack(anchor="w")
         self.cand_var = tk.StringVar(value=str(cfg.get("height_candidates", "")))
-        make_entry(self.high_box, self.cand_var).pack(fill="x")
+        make_entry(self.high_box, self.cand_var, width=9).pack(fill="x")
 
         # table reference markers (flat on the table) -> plane fit
         refrow = tk.Frame(s, bg=C["sandstone"])
@@ -1042,17 +1042,17 @@ class HeightTest(ModeFrame):
         rl.pack(side="left", expand=True, fill="x", padx=(8, 4))
         rr = tk.Frame(refrow, bg=C["sandstone"])
         rr.pack(side="left", padx=(4, 8))
-        make_label(rr, "Ref. size (mm)", 9, True).pack(anchor="w")
+        make_label(rr, "Ref. size", 9, True).pack(anchor="w")
         self.ref_size_var = tk.StringVar(value=str(cfg.get("height_ref_size_mm", "")))
-        make_entry(rr, self.ref_size_var, width=8).pack()
+        make_entry(rr, self.ref_size_var, width=9).pack()
         make_label(rl, "Table reference IDs", 9, True).pack(anchor="w")
         self.refs_var = tk.StringVar(value=str(cfg.get("height_ref_ids", "")))
-        make_entry(rl, self.refs_var).pack(fill="x")
+        make_entry(rl, self.refs_var, width=9).pack(fill="x")
         make_label(s, "Markers lying flat on the table (3 or more, spread out).",
                    8, wraplength=270, justify="left").pack(anchor="w", padx=16, pady=(2, 0))
         
         make_label(s, "Lens horizontal FOV (degrees)", 9, True).pack(anchor="w", padx=16, pady=(8, 0))
-        make_label(s, "Standard Camera Module 3: 66, Wide: 102", 8).pack(anchor="w", padx=16)
+        make_label(s, "Standard RPi cam: 66, Wide: 102", 8).pack(anchor="w", padx=16)
         self.fov_var = tk.StringVar(value=str(cfg.get("camera_hfov_deg", 66.0)))
         make_entry(s, self.fov_var).pack(fill="x", padx=16, pady=(2, 0))
 
